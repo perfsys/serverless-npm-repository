@@ -1,0 +1,135 @@
+{
+  "resource": "/{path+}",
+  "path": "/@perfsys-verdaccio%2fnpm-test-module-a/-/npm-test-module-a-1.0.0.tgz",
+  "httpMethod": "GET",
+  "headers": {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip,deflate",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-Country": "UA",
+    "Host": "h56qz950tc.execute-api.us-east-1.amazonaws.com",
+    "npm-in-ci": "false",
+    "npm-scope": "",
+    "npm-session": "a07b302d0612df0c",
+    "pacote-pkg-id": "registry:@perfsys-test/npm-test-module-a@https://h56qz950tc.execute-api.us-east-1.amazonaws.com/dev/@perfsys-verdaccio%2fnpm-test-module-a/-/npm-test-module-a-1.0.0.tgz",
+    "pacote-req-type": "tarball",
+    "Referer": "install",
+    "User-Agent": "npm/6.13.1 node/v13.2.0 darwin x64",
+    "Via": "1.1 6c9f184c491eed5c51abd110e89bd97b.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Id": "ZgF4Vr2Qgh5VBTTlRN9ZOkTwL9ERURwUibpiqKCOTuzJCdWf0-a3og==",
+    "X-Amzn-Trace-Id": "Root=1-5e8f3c7d-f5060a6435d28c24d5b6167d",
+    "X-Forwarded-For": "37.73.170.97, 130.176.13.149",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "multiValueHeaders": {
+    "Accept": [
+      "*/*"
+    ],
+    "Accept-Encoding": [
+      "gzip,deflate"
+    ],
+    "CloudFront-Forwarded-Proto": [
+      "https"
+    ],
+    "CloudFront-Is-Desktop-Viewer": [
+      "true"
+    ],
+    "CloudFront-Is-Mobile-Viewer": [
+      "false"
+    ],
+    "CloudFront-Is-SmartTV-Viewer": [
+      "false"
+    ],
+    "CloudFront-Is-Tablet-Viewer": [
+      "false"
+    ],
+    "CloudFront-Viewer-Country": [
+      "UA"
+    ],
+    "Host": [
+      "h56qz950tc.execute-api.us-east-1.amazonaws.com"
+    ],
+    "npm-in-ci": [
+      "false"
+    ],
+    "npm-scope": [
+      ""
+    ],
+    "npm-session": [
+      "a07b302d0612df0c"
+    ],
+    "pacote-pkg-id": [
+      "registry:@perfsys-test/npm-test-module-a@https://h56qz950tc.execute-api.us-east-1.amazonaws.com/dev/@perfsys-verdaccio%2fnpm-test-module-a/-/npm-test-module-a-1.0.0.tgz"
+    ],
+    "pacote-req-type": [
+      "tarball"
+    ],
+    "Referer": [
+      "install"
+    ],
+    "User-Agent": [
+      "npm/6.13.1 node/v13.2.0 darwin x64"
+    ],
+    "Via": [
+      "1.1 6c9f184c491eed5c51abd110e89bd97b.cloudfront.net (CloudFront)"
+    ],
+    "X-Amz-Cf-Id": [
+      "ZgF4Vr2Qgh5VBTTlRN9ZOkTwL9ERURwUibpiqKCOTuzJCdWf0-a3og=="
+    ],
+    "X-Amzn-Trace-Id": [
+      "Root=1-5e8f3c7d-f5060a6435d28c24d5b6167d"
+    ],
+    "X-Forwarded-For": [
+      "37.73.170.97, 130.176.13.149"
+    ],
+    "X-Forwarded-Port": [
+      "443"
+    ],
+    "X-Forwarded-Proto": [
+      "https"
+    ]
+  },
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "pathParameters": {
+    "path": "@perfsys-verdaccio%2fnpm-test-module-a/-/npm-test-module-a-1.0.0.tgz"
+  },
+  "stageVariables": null,
+  "requestContext": {
+    "resourceId": "69mb18",
+    "resourcePath": "/{path+}",
+    "httpMethod": "GET",
+    "extendedRequestId": "KuZjoGLfIAMF3GA=",
+    "requestTime": "09/Apr/2020:15:17:17 +0000",
+    "path": "/dev/@perfsys-verdaccio%2fnpm-test-module-a/-/npm-test-module-a-1.0.0.tgz",
+    "accountId": "334057996933",
+    "protocol": "HTTP/1.1",
+    "stage": "dev",
+    "domainPrefix": "h56qz950tc",
+    "requestTimeEpoch": 1586445437501,
+    "requestId": "c2427825-552c-429f-8fab-4f6ef4846f72",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "sourceIp": "37.73.170.97",
+      "principalOrgId": null,
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "npm/6.13.1 node/v13.2.0 darwin x64",
+      "user": null
+    },
+    "domainName": "h56qz950tc.execute-api.us-east-1.amazonaws.com",
+    "apiId": "h56qz950tc"
+  },
+  "body": null,
+  "isBase64Encoded": false
+}

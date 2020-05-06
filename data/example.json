@@ -1,0 +1,41 @@
+{
+  "name": "@perfsys-verdaccio/npm-test-module-b",
+  "versions": {
+    "1.0.0": {
+      "name": "@perfsys-verdaccio/npm-test-module-b",
+      "version": "1.0.0",
+      "description": "",
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "author": "",
+      "license": "ISC",
+      "files": [
+        "/lib"
+      ],
+      "_id": "@perfsys-verdaccio/npm-test-module-b@1.0.0",
+      "_nodeVersion": "13.2.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-7O5gihm19AaNz7vH+qn7isXK2mvbd1EDi2Wnv77lfe/a0ysYLN75m69xgYF65s8KV2i5wbTUB7jPqJ9ybOWYHg==",
+        "shasum": "608a2afa8a29ffa4f68727cb97db02de6ca12a9f",
+        "tarball": "http://localhost:4873/@perfsys-verdaccio%2fnpm-test-module-b/-/npm-test-module-b-1.0.0.tgz"
+      },
+      "contributors": []
+    }
+  },
+  "time": {
+    "modified": "2020-04-09T14:41:57.986Z",
+    "created": "2020-04-09T14:41:57.986Z",
+    "1.0.0": "2020-04-09T14:41:57.986Z"
+  },
+  "users": {},
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "_rev": "3-dcd54b8f9313bacb",
+  "_id": "@perfsys-verdaccio/npm-test-module-b",
+  "readme": "ERROR: No README data found!",
+  "_attachments": {}
+}
