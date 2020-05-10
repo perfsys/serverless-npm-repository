@@ -73,7 +73,7 @@ functions:
     handler: get-package-info.handle
     events:
       - http:
-          path: /{path+}
+          path: /{scope}/{module}
           method: get
 
 resources:
@@ -84,33 +84,10 @@ resources:
       Properties:
         BucketName: ${self:custom.NPM_REGISTRY_S3_NAME}
 
-    MyS3Resource:
-      Type: AWS::ApiGateway::Resource
-      Properties:
-        ParentId: !GetAtt
-          - ApiGatewayRestApi
-          - RootResourceId
-        PathPart: 's3'
-        RestApiId: !Ref ApiGatewayRestApi
-
-    MyScopeResource:
-      Type: AWS::ApiGateway::Resource
-      Properties:
-        ParentId: !Ref MyS3Resource
-        PathPart: '{scope}'
-        RestApiId: !Ref ApiGatewayRestApi
-
-    MyModuleResource:
-      Type: AWS::ApiGateway::Resource
-      Properties:
-        ParentId: !Ref MyScopeResource
-        PathPart: '{module}'
-        RestApiId: !Ref ApiGatewayRestApi
-
     MyVersionsResource:
       Type: AWS::ApiGateway::Resource
       Properties:
-        ParentId: !Ref MyModuleResource
+        ParentId: !Ref ApiGatewayResourceScopeVarModuleVar
         PathPart: 'versions'
         RestApiId: !Ref ApiGatewayRestApi
 
