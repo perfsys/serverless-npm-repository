@@ -28,14 +28,11 @@ module.exports.handle = async (event) => {
 
     // Decode path from HTTP URI
     // https://nodejs.org/api/querystring.html#querystring_querystring_unescape_str
-    const scope = pathParameters.scope
-    const moduleName = pathParameters.module
-
-    const pathUnescaped = querystring.unescape(`${scope}/${moduleName}`)
+    const pathUnescaped = querystring.unescape(path)
 
     // Get NPM scope and module name
-    // const scope = pathUnescaped.split('/')[0]
-    // const moduleName = pathUnescaped.split('/')[1]
+    const scope = pathUnescaped.split('/')[0]
+    const moduleName = pathUnescaped.split('/')[1]
 
     console.log(JSON.stringify({
       scope,
@@ -44,7 +41,6 @@ module.exports.handle = async (event) => {
 
     // Get root package-info value from S3
     const package_info_root = await getJsonFromS3(`${pathUnescaped}/package-info.json`)
-    // const package_info_root = await getJsonFromS3(`${scope}/${moduleName}/package-info.json`)
 
     // Try to understand if we have valid package-info from S3
     if (package_info_root && package_info_root.name){
@@ -59,7 +55,7 @@ module.exports.handle = async (event) => {
     console.log(`available_versions: ${available_versions}`)
 
     const forEachVersion = (version) => {
-      const tarball = `https://${domainName}/${stage}/${scope}/${moduleName}/versions/${version}/${moduleName}-${version}.tgz`
+      const tarball = `https://${domainName}/${stage}/dist/${scope}/${moduleName}/versions/${version}/${moduleName}-${version}.tgz`
     console.log(tarball)
       // return versionPackageInfo
       return new Promise(function (resolve, reject) {
