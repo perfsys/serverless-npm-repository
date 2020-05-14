@@ -1,8 +1,7 @@
-service: serverless-npm-registry
+service:
+  name: ${env:NPM_REGISTRY_NAME, 'perfsys-npm-registry'}
 custom:
-#  bucketName: perfsys-npm-registry
-#  NPM_REGISTRY_S3_NAME: ${env:NPM_REGISTRY_S3_NAME}
-  NPM_REGISTRY_S3_NAME: perfsys-npm-registry-1
+  NPM_REGISTRY_S3_NAME: ${env:NPM_REGISTRY_NAME, 'perfsys-npm-registry'}-artifacts
 
 package:
   exclude:
@@ -13,8 +12,11 @@ package:
 provider:
   name: aws
   runtime: nodejs12.x
-  stage: ${opt:stage, 'dev'}
-  region: us-east-1
+#  stage: ${opt:stage, 'dev'}
+  stage: npm
+  region: ${env:NPM_REGISTRY_REGION, 'us-east-1'}
+#  deploymentBucket:
+#    name: ${env:NPM_REGISTRY_NAME, 'perfsys-npm-registry'}-state
   iamRoleStatements:
 
     -
@@ -73,7 +75,7 @@ functions:
     handler: get-package-info.handle
     events:
       - http:
-          path: /{scope}/{module}
+          path: /{path+}
           method: get
 
 resources:
@@ -84,10 +86,32 @@ resources:
       Properties:
         BucketName: ${self:custom.NPM_REGISTRY_S3_NAME}
 
+    MyDistResource:
+      Type: AWS::ApiGateway::Resource
+      Properties:
+        ParentId:
+          "Fn::GetAtt": ["ApiGatewayRestApi", "RootResourceId"]
+        PathPart: 'dist'
+        RestApiId: !Ref ApiGatewayRestApi
+
+    MyScopeResource:
+      Type: AWS::ApiGateway::Resource
+      Properties:
+        ParentId: !Ref MyDistResource
+        PathPart: '{scope}'
+        RestApiId: !Ref ApiGatewayRestApi
+
+    MyModuleResource:
+      Type: AWS::ApiGateway::Resource
+      Properties:
+        ParentId: !Ref MyScopeResource
+        PathPart: '{module}'
+        RestApiId: !Ref ApiGatewayRestApi
+
     MyVersionsResource:
       Type: AWS::ApiGateway::Resource
       Properties:
-        ParentId: !Ref ApiGatewayResourceScopeVarModuleVar
+        ParentId: !Ref MyModuleResource
         PathPart: 'versions'
         RestApiId: !Ref ApiGatewayRestApi
 
